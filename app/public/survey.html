@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <title>Survey</title>
+</head>
+
+<body>
+    <form>
+        What is your name?
+        <input type="text" id="userName" name="name">
+        <br> What is your favorite car brand?
+        <br>
+        <select id="one" name="cars">
+            <option value="1">Volvo</option>
+            <option value="2">Saab</option>
+            <option value="3">Fiat</option>
+            <option value="4">Audi</option>
+            <option value="5">Honda</option>
+        </select>
+        <br> What is your favorite airline?
+        <br>
+        <select id="two" name="airline">
+            <option value="1">American</option>
+            <option value="2">United</option>
+            <option value="3">Southwest</option>
+            <option value="4">Delta</option>
+            <option value="5">JetBlue</option>
+        </select>
+        <br> What is your favorite NFL team?
+        <br>
+        <select id="three" name="nfl">
+            <option value="1">Dallas Cowboys</option>
+            <option value="2">New England Patriots</option>
+            <option value="3">Washington</option>
+            <option value="4">Philadelphia Eagles</option>
+            <option value="5">Seattle Seahawks</option>
+        </select>
+        <br> What of these cities is your ideal?
+        <br>
+        <select id="four" name="cities">
+            <option value="1">Chicago </option>
+            <option value="2">San Francisco </option>
+            <option value="3">Boston</option>
+            <option value="4">New York</option>
+            <option value="5">Los Angeles</option>
+        </select>
+        <br> What is your favorite fast food?
+        <br>
+        <select id="five" name="fastFood">
+            <option value="1">McDonalds</option>
+            <option value="2">Wendys</option>
+            <option value="3">In-N-Out</option>
+            <option value="4">Whataburger</option>
+            <option value="5">Shake Shack</option>
+        </select>
+        <br> Who is your favorite professional sports athlete?
+        <br>
+        <select id="six" name="nfl6">
+            <option value="1">Dallas Cowboys</option>
+            <option value="2">New England Patriots</option>
+            <option value="3">Washington</option>
+            <option value="4">Philadelphia Eagles</option>
+            <option value="5">Seattle Seahawks</option>
+        </select>
+        <br> What is your favorite NFL team?
+        <br>
+        <select id="seven" name="nfl7">
+            <option value="1">Dallas Cowboys</option>
+            <option value="2">New England Patriots</option>
+            <option value="3">Washington</option>
+            <option value="4">Philadelphia Eagles</option>
+            <option value="5">Seattle Seahawks</option>
+        </select>
+        <br> What is your favorite NFL team?
+        <br>
+        <select id="eight" name="nfl8">
+            <option value="1">Dallas Cowboys</option>
+            <option value="2">New England Patriots</option>
+            <option value="3">Washington</option>
+            <option value="4">Philadelphia Eagles</option>
+            <option value="5">Seattle Seahawks</option>
+        </select>
+        <br> What is your favorite NFL team?
+        <br>
+        <select id="nine" name="nfl9">
+            <option value="1">Dallas Cowboys</option>
+            <option value="2">New England Patriots</option>
+            <option value="3">Washington</option>
+            <option value="4">Philadelphia Eagles</option>
+            <option value="5">Seattle Seahawks</option>
+        </select>
+        <br> What is your favorite NFL team?
+        <br>
+        <select id="ten" name="nfl10">
+            <option value="1">Dallas Cowboys</option>
+            <option value="2">New England Patriots</option>
+            <option value="3">Washington</option>
+            <option value="4">Philadelphia Eagles</option>
+            <option value="5">Seattle Seahawks</option>
+
+        </select>
+        <br>
+
+        <input id="pushIt" type="submit">
+
+
+    </form>
+
+
+    <script>
+        $("#pushIt").on("click", function (event) {
+            event.preventDefault();
+            var userName = $("#userName").val().trim();
+            var newArr = []
+            newArr.push(parseInt($("#one").val()), parseInt($("#two").val()), parseInt($("#three").val()),
+                parseInt($("#four").val()), parseInt($("#five").val()), parseInt($("#six").val()), parseInt(
+                    $("#seven").val()), parseInt($("#eight").val()), parseInt($("#nine").val()), parseInt($(
+                    "#ten").val()))
+            
+
+            var newObj = {
+                name: userName,
+                score: newArr
+            };
+            
+
+            $.post("/api/friends", newObj,
+                function (data) {
+                    
+            query();
+                })
+        });
+        
+        function query() {
+            var currentURL = window.location.origin;
+        $.ajax({
+                url: currentURL + "/api/friends",
+                method: "GET"
+            })
+            .then(function (data) {
+                
+                console.log(data[0].score)
+            });}
+
+    </script>
+</body>
+
+</html>

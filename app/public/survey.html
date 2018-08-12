@@ -3,110 +3,131 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="assets/css/reset.css"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="assets/css/style.css"> -->
+    <link rel="icon" type="favicon" href="">
     <title>Survey</title>
 </head>
 
 <body>
-    <form>
-        What is your name?
+    <header>
+        <nav class="navbar navbar-light bg-dark mb-3">
+            <a class="navbar-brand text-light" href="./survey">Friendship Survey</a>
+            <div class="text-light" id="theme">Instructions: Type your name, and rate how strongly you agree with the following 10 statements.</div>
+        </nav>
+
+    </header>
+    <div class="container">
+    <form class="form-group">
+       What is your name?<br>
         <input type="text" id="userName" name="name">
-        <br> What is your favorite car brand?
-        <br>
-        <select id="one" name="cars">
-            <option value="1">Volvo</option>
-            <option value="2">Saab</option>
-            <option value="3">Fiat</option>
-            <option value="4">Audi</option>
-            <option value="5">Honda</option>
+        <br><br>
+        LeBron James is the best basketball player currently playing in the NBA.<br>
+        <select class="bg-secondary text-light m-3" id="one" name="bball">
+            <option value="1">Strongly Disagree</option>
+            <option value="2">Somewhat Disagree</option>
+            <option value="3">Neutral</option>
+            <option value="4">Somewhat Agree</option>
+            <option value="5">Strongly Agree</option>
         </select>
-        <br> What is your favorite airline?
+        <br> To travel long distances, I would prefer to fly.
         <br>
-        <select id="two" name="airline">
-            <option value="1">American</option>
-            <option value="2">United</option>
-            <option value="3">Southwest</option>
-            <option value="4">Delta</option>
-            <option value="5">JetBlue</option>
+        <select class="bg-secondary text-light m-3" id="two" name="fly">
+                <option value="1">Strongly Disagree</option>
+                <option value="2">Somewhat Disagree</option>
+                <option value="3">Neutral</option>
+                <option value="4">Somewhat Agree</option>
+                <option value="5">Strongly Agree</option>
         </select>
-        <br> What is your favorite NFL team?
+        <br> It is better to be loved than feared.
         <br>
-        <select id="three" name="nfl">
-            <option value="1">Dallas Cowboys</option>
-            <option value="2">New England Patriots</option>
-            <option value="3">Washington</option>
-            <option value="4">Philadelphia Eagles</option>
-            <option value="5">Seattle Seahawks</option>
+        <select class="bg-secondary text-light m-3" id="three" name="love">
+                <option value="1">Strongly Disagree</option>
+                <option value="2">Somewhat Disagree</option>
+                <option value="3">Neutral</option>
+                <option value="4">Somewhat Agree</option>
+                <option value="5">Strongly Agree</option>
         </select>
-        <br> What of these cities is your ideal?
+        <br> The city is preferable to live over rural areas.
         <br>
-        <select id="four" name="cities">
-            <option value="1">Chicago </option>
-            <option value="2">San Francisco </option>
-            <option value="3">Boston</option>
-            <option value="4">New York</option>
-            <option value="5">Los Angeles</option>
+        <select class="bg-secondary text-light m-3" id="four" name="cities">
+                <option value="1">Strongly Disagree</option>
+                <option value="2">Somewhat Disagree</option>
+                <option value="3">Neutral</option>
+                <option value="4">Somewhat Agree</option>
+                <option value="5">Strongly Agree</option>
         </select>
-        <br> What is your favorite fast food?
+        <br> The West Coast is a better place to live over the East Coast.
         <br>
-        <select id="five" name="fastFood">
-            <option value="1">McDonalds</option>
-            <option value="2">Wendys</option>
-            <option value="3">In-N-Out</option>
-            <option value="4">Whataburger</option>
-            <option value="5">Shake Shack</option>
+        <select class="bg-secondary text-light m-3" id="five" name="coast">
+                <option value="1">Strongly Disagree</option>
+                <option value="2">Somewhat Disagree</option>
+                <option value="3">Neutral</option>
+                <option value="4">Somewhat Agree</option>
+                <option value="5">Strongly Agree</option>
         </select>
-        <br> Who is your favorite professional sports athlete?
+        <br> As my personal vehicle, I would rather drive an SUV over a car.
         <br>
-        <select id="six" name="nfl6">
-            <option value="1">Dallas Cowboys</option>
-            <option value="2">New England Patriots</option>
-            <option value="3">Washington</option>
-            <option value="4">Philadelphia Eagles</option>
-            <option value="5">Seattle Seahawks</option>
+        <select class="bg-secondary text-light m-3" id="six" name="cars">
+                <option value="1">Strongly Disagree</option>
+                <option value="2">Somewhat Disagree</option>
+                <option value="3">Neutral</option>
+                <option value="4">Somewhat Agree</option>
+                <option value="5">Strongly Agree</option>
         </select>
-        <br> What is your favorite NFL team?
+        <br> Dogs are better than Cats.
         <br>
-        <select id="seven" name="nfl7">
-            <option value="1">Dallas Cowboys</option>
-            <option value="2">New England Patriots</option>
-            <option value="3">Washington</option>
-            <option value="4">Philadelphia Eagles</option>
-            <option value="5">Seattle Seahawks</option>
+        <select class="bg-secondary text-light m-3" id="seven" name="dogs">
+                <option value="1">Strongly Disagree</option>
+                <option value="2">Somewhat Disagree</option>
+                <option value="3">Neutral</option>
+                <option value="4">Somewhat Agree</option>
+                <option value="5">Strongly Agree</option>
         </select>
-        <br> What is your favorite NFL team?
+        <br>On Saturday nights, I would rather go to the club or bar than attend a game night.
         <br>
-        <select id="eight" name="nfl8">
-            <option value="1">Dallas Cowboys</option>
-            <option value="2">New England Patriots</option>
-            <option value="3">Washington</option>
-            <option value="4">Philadelphia Eagles</option>
-            <option value="5">Seattle Seahawks</option>
+        <select class="bg-secondary text-light m-3" id="eight" name="club">
+                <option value="1">Strongly Disagree</option>
+                <option value="2">Somewhat Disagree</option>
+                <option value="3">Neutral</option>
+                <option value="4">Somewhat Agree</option>
+                <option value="5">Strongly Agree</option>
         </select>
-        <br> What is your favorite NFL team?
+        <br> While walking inside my home, I wear shoes I also wear outside the house.
         <br>
-        <select id="nine" name="nfl9">
-            <option value="1">Dallas Cowboys</option>
-            <option value="2">New England Patriots</option>
-            <option value="3">Washington</option>
-            <option value="4">Philadelphia Eagles</option>
-            <option value="5">Seattle Seahawks</option>
+        <select class="bg-secondary text-light m-3" id="nine" name="shoes">
+                <option value="1">Strongly Disagree</option>
+                <option value="2">Somewhat Disagree</option>
+                <option value="3">Neutral</option>
+                <option value="4">Somewhat Agree</option>
+                <option value="5">Strongly Agree</option>
         </select>
-        <br> What is your favorite NFL team?
+        <br> I pronounce the term JSON as "Jason"
         <br>
-        <select id="ten" name="nfl10">
-            <option value="1">Dallas Cowboys</option>
-            <option value="2">New England Patriots</option>
-            <option value="3">Washington</option>
-            <option value="4">Philadelphia Eagles</option>
-            <option value="5">Seattle Seahawks</option>
+        <select class="bg-secondary text-light m-3" id="ten" name="json">
+                <option value="1">Strongly Disagree</option>
+                <option value="2">Somewhat Disagree</option>
+                <option value="3">Neutral</option>
+                <option value="4">Somewhat Agree</option>
+                <option value="5">Strongly Agree</option>
 
         </select>
         <br>
 
-        <input id="pushIt" type="submit">
+        <input class="btn btn-success" id="pushIt" type="submit">
 
 
     </form>
@@ -143,11 +164,20 @@
                 method: "GET"
             })
             .then(function (data) {
+                var arr = [];
+                for(i=0;i<data.length;i++){
+                    arr[i] = [];
+                for(j=0;j<data[i].score.length;j++){
+                    arr[i].push(parseInt(data[i].score[j]))
+                    
+                }
+                console.log(arr[i])
                 
-                console.log(data[0].score)
-            });}
+
+            }});}
 
     </script>
+    </div>
 </body>
 
 </html>

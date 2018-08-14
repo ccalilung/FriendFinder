@@ -136,6 +136,7 @@
 
 
         <script>
+          
             $("#pushIt").on("click", function (event) {
                 event.preventDefault();
                 var userName = $("#userName").val().trim();
@@ -158,7 +159,9 @@
                     function (data) {
 
                         query();
+                        
                     })
+               
             });
 
             function query() {
@@ -191,20 +194,29 @@
                             sumArr.push(sum)
                             sum = 0;
                         }
+                        console.log(sumArr)
                         
-                        while(a<41){
-                        for(i=0;i<sumArr.length;i++){
-                            if(sumArr[i] === a) {
-                                console.log("Diff: "+ a + " Name: " + data[i].name)
-                                a++
-                            } else{a++} 
+                        for(j=0;j<=40;j++){
+                        for(i=0;i<sumArr.length;i++) {
+                                if(sumArr[i]===j) {
+                                 var a = i;
+                                 post(currentURL, a);
+                                 return a
+                                }
+                            }
                         }
-                    }
-
-
-
+                        
                     });
             }
+        function post(currentURL, a) {
+            $.ajax({
+                        url: currentURL + "/api/friends",
+                        method: "GET"
+                    }).then(function (data) {
+                        
+                        console.log(data[a].name)
+                    
+        })}
         </script>
     </div>
 </body>

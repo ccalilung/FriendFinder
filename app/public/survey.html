@@ -36,7 +36,12 @@
             <br>
             <input type="text" id="userName" name="name">
             <br>
-            <br> LeBron James is the best basketball player currently playing in the NBA.
+            Image URL (full link):
+            <br>
+            <input type="text" id="userImage" name="image">
+            <br>
+            <h2>Questions:</h2>
+            LeBron James is the best basketball player currently playing in the NBA.
             <br>
             <select class="bg-secondary text-light m-3" id="one" name="bball">
                 <option value="1">1 - Strongly Disagree</option>
@@ -129,17 +134,37 @@
             </select>
             <br>
 
-            <input class="btn btn-success" id="pushIt" type="submit">
+            <input class="btn btn-success" data-toggle="modal" data-target="#theModal" id="pushIt" type="submit">
 
 
         </form>
-
+<!-- Modal -->
+<div class="modal fade" id="theModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Your Friend Match!</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" id="friendMatched">
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
         <script>
           
             $("#pushIt").on("click", function (event) {
                 event.preventDefault();
                 var userName = $("#userName").val().trim();
+                var userImage = $("#userImage").val().trim();
                 var newArr = []
                 newArr.push(parseInt($("#one").val()), parseInt($("#two").val()), parseInt($("#three").val()),
                     parseInt($("#four").val()), parseInt($("#five").val()), parseInt($("#six").val()),
@@ -151,6 +176,7 @@
 
                 var newObj = {
                     name: userName,
+                    image: userImage,
                     score: newArr
                 };
 
@@ -214,7 +240,8 @@
                         method: "GET"
                     }).then(function (data) {
                         
-                        console.log(data[a].name)
+                        
+                        document.getElementById("friendMatched").innerHTML = data[a].name + "<br> <img src='" + data[a].image + "'>"
                     
         })}
         </script>
